@@ -314,7 +314,8 @@ intensity <- Hourly_intensity %>%
 
 *	 The Scatter-Plot between Calories and Total Steps and Total Activity Shows a positive co-relation 
 	 
-![](https://github.com/Ritik-Singh23/images/blob/main/Rplot01.png)	
+![](https://github.com/Ritik-Singh23/images/blob/main/Rplot01.png)
+![](https://github.com/Ritik-Singh23/images/blob/main/Rplot02.png)
 
 
 *	The Scatter-Plot between Total Minutes Asleep and Total Time In Bed shows a significantly small gap 
@@ -335,7 +336,7 @@ intensity <- Hourly_intensity %>%
 
 *	The Scatter-Plot between Sedentary Time and Total Sleep Time shows a negative co-relation 
 
-	 
+![](https://github.com/Ritik-Singh23/images/blob/main/Rplot07.png)
 
 
 ## ACT
