@@ -74,7 +74,9 @@ SELECT COLUMN_NAME,DATA_TYPE
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = 'weightloginfo'
 ```
-
+![](https://github.com/Ritik-Singh23/images/blob/main/Capture.PNG)![](https://github.com/Ritik-Singh23/images/blob/main/Capture1.PNG)
+![](https://github.com/Ritik-Singh23/images/blob/main/Capture2.PNG)![](https://github.com/Ritik-Singh23/images/blob/main/Capture3.PNG)
+![](https://github.com/Ritik-Singh23/images/blob/main/Capture4.PNG)
 
 *	It appears that “dailyactivity”, “dailycalories”, and “dailyintensities” have the exact same number of observations.
 *	Furthermore, it seems the “dailyactivity” table might have a log of calories and intensities already, so we should confirm that the values actually match for any given ‘ID’ number.
@@ -99,7 +101,8 @@ SELECT COUNT(*) FROM case_study.check1
 
 ```sql
 CREATE TABLE case_study.daily_activity3 AS (
-SELECT Id, ActivityDate, SedentaryMinutes, LightlyActiveMinutes, FairlyActiveMinutes, VeryActiveMinutes, SedentaryActiveDistance, LightActiveDistance, ModeratelyActiveDistance, VeryActiveDistance
+SELECT Id, ActivityDate, SedentaryMinutes, LightlyActiveMinutes, FairlyActiveMinutes, VeryActiveMinutes,
+SedentaryActiveDistance, LightActiveDistance, ModeratelyActiveDistance, VeryActiveDistance
  FROM case_study.dailyactivity)
 
 CREATE TABLE case_study.check2
@@ -109,6 +112,8 @@ INNER join case_study.dailyintensities as b
 ON a.id = b.id) 
 SELECT COUNT(*) FROM case_study.check2
 ```
+![](https://github.com/Ritik-Singh23/images/blob/main/Capture5.PNG)
+
 *	As there are again 940 observations , tables “dailyintensities”  and “dailycalories” can be safely dropped as the “dailyactivity” table contains these values 
 *	Now Checking the “dailyactivity” table for null values
 
@@ -130,6 +135,8 @@ SELECT
      SUM(CASE WHEN Calories  IS NULL THEN 1 ELSE 0 END) AS Calories_null
 FROM case_study.dailyactivity
 ```
+![](https://github.com/Ritik-Singh23/images/blob/main/Capture6.PNG)
+
 *	Upload the cleaned data sets to R-Studio for further data manipulation and import required packages “tidyverse” , “dplyr” and “readr”
 *	Now checking the number of observation and distinct ids from each of the data sets
 *	By checking the date column in each Data Set therefore using “as.date()” , “as.posixct()” to correct the DataType
